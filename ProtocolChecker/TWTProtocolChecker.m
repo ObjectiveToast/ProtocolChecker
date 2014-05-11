@@ -32,7 +32,7 @@
 #pragma mark Helper Functions
 
 /*!
- @abstract Accumulates and returns the selectors in the specified protocol.
+ @abstract Recursively accumulates and returns the selectors in the specified protocol.
  @discussion This function recursively adds all methods in the protocol and its protocol list 
      (and their protocol lists) to the specified set of selectors.
  @param protocol The protocol whose selectors are being returned.
@@ -57,7 +57,6 @@ static NSMutableSet *TWTProtocolAccumulateSelectorStrings(Protocol *protocol, BO
     }
 
     free(methods);
-
 
     // Add optional methods
     methodCount = 0;
